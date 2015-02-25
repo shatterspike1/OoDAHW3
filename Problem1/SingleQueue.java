@@ -4,7 +4,7 @@ public class SingleQueue
     private SQNode head = null;
     private SQNode tail = null;
     
-    public SingleQueue(Submission s)
+    private SingleQueue(Submission s)
     {
         head = new SQNode(s);
         tail = head;
@@ -26,10 +26,25 @@ public class SingleQueue
     
     public Submission process()
     {
-        Submission hold = sQ.head.getHas();
+    
+        if (sQ == null)
+        {
+            System.out.println("SingleQueue.process method ERROR: No SingleQueue exists");
+            return null;
+        }
+        else
+        {
+            Submission hold = sQ.head.getHas();
+            if (sQ.head.getNext() == null) // If Queue is processing last item in Queue, deletes the Queue; will reinitialize when more is added.
+            {
+                sQ = null;
+            }
+            else
+            {
+                sQ.head = sQ.head.getNext();
+            }
         
-        sQ.head = sQ.head.getNext();
-        
-        return hold;
+            return hold;
+        }
     }
 }
