@@ -1,8 +1,8 @@
 public class LoggingFactory
 {
-    public Logging logfile = null;
     static public Logging logMake(String type)
     {
+        Logging logfile = null;
         if (type.equalsIgnoreCase("text"))
         {
 			logfile = new LogText();
@@ -19,5 +19,6 @@ public class LoggingFactory
         {
 			logfile = new LogText();
         }
+        return logfile;
     }
 }
