@@ -1,6 +1,6 @@
 public class SingleQueue
 {
-    private SingleQueue sQ = null;
+    private static SingleQueue sQ = null;
     private SQNode head = null;
     private SQNode tail = null;
     
