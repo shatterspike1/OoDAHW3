@@ -10,7 +10,7 @@ public class SingleQueue
         tail = head;
     }
     
-    public void add(Submission s)
+    public static void add(Submission s)
     {
         if (sQ == null)
         {
@@ -24,7 +24,7 @@ public class SingleQueue
         }
     }
     
-    public Submission process()
+    public static Submission process()
     {
     
         if (sQ == null)
